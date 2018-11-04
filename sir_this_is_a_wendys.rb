@@ -1,5 +1,6 @@
 require 'cuba'
 require 'twitter'
+require 'newrelic_rpm'
 
 CLIENT = Twitter::REST::Client.new do |c|
   c.consumer_key        = ENV['TWITTER_CONSUMER_API_KEY']
