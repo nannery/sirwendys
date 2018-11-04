@@ -17,9 +17,9 @@ end
 
 def does_the_customer_know_where_he_or_she_is?
   latest_tweet = CLIENT.user_timeline(CUSTOMER).first
-  if latest_tweet.created_at > last_checked_time
+  #if latest_tweet.created_at > last_checked_time
     CLIENT.update(COMMENT, in_reply_to_status_id: latest_tweet.id)
-  end
+  #end
 end
 
 Cuba.define do
