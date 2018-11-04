@@ -9,7 +9,7 @@ CLIENT = Twitter::REST::Client.new do |c|
 end
 
 CUSTOMER = 'realDonaldTrump'
-COMMENT  = "Sir, this is a Wendy's"
+COMMENT  = "@#{CUSTOMER} Excuse me, sir, this is a Wendy's"
 
 def last_checked_time
   Time.at(Time.now.to_i - 60)
