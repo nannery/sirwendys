@@ -2,10 +2,10 @@ require 'cuba'
 require 'twitter'
 
 CLIENT = Twitter::REST::Client.new do |c|
-  c.consumer_key        = "YOUR_CONSUMER_KEY"
-  c.consumer_secret     = "YOUR_CONSUMER_SECRET"
-  c.access_token        = "YOUR_ACCESS_TOKEN"
-  c.access_token_secret = "YOUR_ACCESS_SECRET"
+  c.consumer_key        = ENV['TWITTER_CONSUMER_API_KEY']
+  c.consumer_secret     = ENV['TWITTER_CONSUMER_API_SECRET']
+  c.access_token        = ENV['TWITTER_ACCESS_TOKEN']
+  c.access_token_secret = ENV['TWITTER_ACCESS_TOKEN_SECRET']
 end
 
 CUSTOMER = 'realDonaldTrump'
@@ -26,7 +26,7 @@ Cuba.define do
   on get do
     on root do
       does_the_customer_know_where_he_or_she_is?
-      res.write 'Sir, this is a Wendy\'s' + well?
+      res.write 'Sir, this is a Wendy\'s'
     end
   end
 end
